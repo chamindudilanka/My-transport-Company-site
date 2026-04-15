@@ -1,0 +1,391 @@
+xml
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device‑width, initial‑scale=1.0" />
+  <title>Diamond Group Pvt Ltd – Luxury Bus & Van Hire</title>
+  <style>
+    /* Reset & base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+    }
+    body {
+      background-color: #f8fafc;
+    }
+
+    /* Helpers */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .section {
+      padding: 4rem 0;
+    }
+    .section-title {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      text-align: center;
+      color: #1e3a8a;
+    }
+    .section-subtitle {
+      text-align: center;
+      color: #64748b;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Header */
+    header {
+      background-color: #1e3a8a;
+      color: white;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    .logo span {
+      color: #fbbf24;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #fbbf24;
+    }
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: white;
+      cursor: pointer;
+    }
+
+    /* Hero section */
+    .hero {
+      background: linear-gradient(rgba(10, 20, 30, 0.8), rgba(10, 20, 30, 0.8)),
+                  url('https://images.unsplash.com/photo-1449157291145-7efd050a40e2?ixlib=rb-4.0.3&q=80') center/cover no-repeat;
+      color: white;
+      padding: 6rem 0;
+      text-align: center;
+    }
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+    .btn {
+      display: inline-block;
+      background-color: #fbbf24;
+      color: #1e3a8a;
+      padding: 0.8rem 1.6rem;
+      border-radius: 0.375rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    /* About section */
+    .about {
+      background-color: white;
+    }
+    .about-content {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+    }
+    .about-text {
+      flex: 1;
+    }
+    .about-text h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #1e3a8a;
+    }
+    .about-text p {
+      margin-bottom: 1rem;
+      color: #475569;
+    }
+    .about-image {
+      flex: 1;
+    }
+    .about-image img {
+      width: 100%;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Services section */
+    .services {
+      background-color: #f1f5f9;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .card {
+      background-color: white;
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+    .card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: #1e3a8a;
+    }
+    .card p {
+      color: #64748b;
+      font-size: 0.95rem;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #1e293b;
+      color: #cbd5e1;
+      padding: 3rem 0 1.5rem;
+    }
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .footer-column h3 {
+      margin-bottom: 1rem;
+      color: #fbbf24;
+    }
+    .footer-column ul {
+      list-style: none;
+    }
+    .footer-column li {
+      margin-bottom: 0.5rem;
+    }
+    .footer-column a {
+      color: #cbd5e1;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-column a:hover {
+      color: #fbbf24;
+    }
+    .footer-bottom {
+      border-top: 1px solid #334155;
+      padding-top: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: flex-start;
+      }
+      nav {
+        width: 100%;
+        flex-direction: column;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .mobile-toggle {
+        display: block;
+        margin-left: auto;
+      }
+
+      .about-content {
+        flex-direction: column;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-container container">
+      <div class="logo">
+        Diamond <span>Group</span>
+      </div>
+      <nav>
+        <button class="mobile-toggle" aria-label="Toggle menu">☰</button>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero section -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Diamond Group – Premium Passenger Transport</h1>
+        <p>Luxury buses, regular buses, and KDH vans for all trips – from daily commutes to special pilgrimages and tours.</p>
+        <a href="#contact" class="btn">Book a Vehicle</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us section -->
+  <section id="about" class="section about">
+    <div class="container">
+      <h2 class="section-title">About Diamond Group</h2>
+      <p class="section-subtitle">A trusted partner in safe, comfortable, and reliable road transport.</p>
+
+      <div class="about-content">
+        <div class="about-text">
+          <h2>Over a decade of trusted transport</h2>
+          <p>Diamond Group Pvt Ltd is a leading passenger transport company operating luxury buses, regular buses, and KDH vans across Sri Lanka and on international routes. We are committed to safety, punctuality, and comfort for every journey.</p>
+          <p>Our fleet is maintained to the highest standards and driven by experienced, verified drivers, ensuring that your special trips, pilgrimages, school tours, and corporate events go smoothly from start to finish.</p>
+          <p>Whether you need a vehicle for a one‑day trip, a weekly route, or a multi‑day tour, Diamond Group offers flexible booking options and personalized service to meet your needs.</p>
+        </div>
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1517130038641-a774d04afb3c?ixlib=rb-4.0.3&q=80" alt="Modern luxury bus on a scenic road" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services section -->
+  <section id="services" class="section services">
+    <div class="container">
+      <h2 class="section-title">Our Transport Services</h2>
+      <p class="section-subtitle">From luxury travel to everyday transport, we cover every type of trip.</p>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Luxury Buses</h3>
+          <p>Comfortable, air‑conditioned buses with reclining seats, Wi‑Fi, and entertainment options for long‑distance tours and corporate events.</p>
+        </div>
+        <div class="card">
+          <h3>Regular Buses</h3>
+          <p>Reliable, cost‑effective buses for daily routes, school transport, and group tours with professional drivers and scheduled maintenance.</p>
+        </div>
+        <div class="card">
+          <h3>KDH Van Service</h3>
+          <p>Compact KDH vans for smaller groups, airport transfers, and short‑distance trips, offering flexibility and convenient access to tighter locations.</p>
+        </div>
+        <div class="card">
+          <h3>Special & Religious Trips</h3>
+          <p>Dedicated packages for pilgrimages, temple visits, and religious gatherings, with flexible scheduling and route planning.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Contact Us</h3>
+          <ul>
+            <li>📍 Matara, Southern Province, Sri Lanka</li>
+            <li>📞 +94 XX XXX XXXX (replace with your number)</li>
+            <li>✉️ info@diamondgroup.lk</li>
+            <li>⏱️ Office hours: 8:00 AM – 6:00 PM (Mon–Sat)</li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact & Booking</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Booking</h3>
+          <p>Call or email us to book a vehicle for your next trip, school tour, company outing, or pilgrimage.</p>
+          <a href="tel:+94XXXXXXXXX" class="btn" style="color:#1e3a8a">Call Now</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Diamond Group Pvt Ltd. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Simple JavaScript for mobile toggle -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggle = document.querySelector(".mobile-toggle");
+      const nav = document.querySelector("nav ul");
+
+      toggle.addEventListener("click", () => {
+        nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+      });
+
+      // Close menu on small screens when a link is clicked
+      if (window.innerWidth <= 768) {
+        nav.querySelectorAll("a").forEach(link => {
+          link.addEventListener("click", () => {
+            nav.style.display = "none";
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>
